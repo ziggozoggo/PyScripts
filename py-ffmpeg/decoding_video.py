@@ -14,13 +14,13 @@ def decoding_file(file_name, ffmpeg_exe, file_output):
                '-c:v:3', 'libx264', '-b:v:3', '400k', '-s:v:3', '426x240', '-metadata:s:v:3', 'language=eng',
                file_output
     ]
+    my_str = ' '.join(command)
+    print(my_str)
+    subprocess.run(my_str, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
 
-    print(type(command))
-    #subprocess.run(command, stdout=subprocess.PIPE, stdin=subprocess.PIPE)
-
-my_file = "C:\\_myProgs\\ffmpeg\\kiberbezopasnost_test_720p.mp4"
+my_file = "C:\\_myProgs\\PyScripts\\source\\kiberbezopasnost_test_720p.mp4"
 my_ffpmeg = "C:\\Progs\\ffmpeg-4.4-full_build\\bin\\ffmpeg.exe"
-my_out = "C:\\_myProgs\\ffmpeg\\out_2.mp4"
+my_out = "C:\\_myProgs\\PyScripts\\out\\out_2.mp4"
 
 decoding_file(my_file,my_ffpmeg,my_out)
 
