@@ -5,11 +5,11 @@ import subprocess
 import sys, os
 
 # Файл для экспериментов
-file_name = "C:\\_myProgs\\PyScripts\\out\\out_2_H265.mp4"
+file_name = "C:\\_myProgs\\PyScripts\\out\\out_2_VSlow_New.mp4"
 # Путь до ffmpeg; PATH прописать админы не дают же
 ffmpeg_exe = "C:\\Progs\\ffmpeg-4.4-full_build\\bin\\ffmpeg.exe"
 # Результат эксперимента
-file_output = "C:\\_myProgs\\PyScripts\\out\\out_2_H265_marked.mp4"
+file_output = "C:\\_myProgs\\PyScripts\\out\\out_2_VSlow_New_marked.mp4"
 
 # Параметры ffmpeg; маппим видео каналы 
 
@@ -23,7 +23,7 @@ text_mark_360p = ['-filter:v:2', 'drawtext="text=\'360P\':x=100:y=50:fontsize=12
 text_mark_240p = ['-filter:v:3', 'drawtext="text=\'240P\':x=100:y=50:fontsize=120:fontcolor=yellow:box=1:boxcolor=red"']
 
 # Запуск ffmpeg
-command = [ffmpeg_exe, '-i', file_name,'-preset','slow']
+command = [ffmpeg_exe, '-i', file_name,'-preset','veryslow']
 out = [file_output]
 
 final_list = command + map_input + text_mark_720p + text_mark_480p + text_mark_360p + text_mark_240p + out
